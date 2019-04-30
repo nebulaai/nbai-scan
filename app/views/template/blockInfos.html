@@ -1,0 +1,192 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form small-r">
+    <div class="boxi" style="clear:both">
+        <span>
+            <span class="translate-block-page-title">blockPageTitle</span>
+            <i class="fa fa-cube"></i>
+            <span class="translate-block-page-title-before-block"
+                ng-if="blockType=='blocks'">blockPageTitleBeforeBlock</span>
+            <span class="translate-block-page-title-before-uncle-block"
+                ng-if="blockType=='uncleblocks'">blockPageTitleBeforeUncleBlock</span>
+        </span>
+        {{number}}
+        <span class="translate-block-page-title-after">blockPageTitleAfter</span>
+    </div>
+
+    <div id="block" class="blockdiv">
+        <div style="padding-bottom:10px;width:100%;text-align:right;clear:both" class="little-r"
+            ng-if="blockType=='blocks'">
+            <span class="button right-border">{{conf}}</span>
+            <span class="cb button">
+                <span>{{gasUsed}} <span class="translate-block-gas">blockGas</span></span>
+            </span>
+            <br class="separ-rm">
+            <a class="button" ng-class="{disabled:firstBlock}" href="./#/blocks/{{blockNumber-1}}">&lt;<span
+                    class=" translate-block-previous">blockPrevious</span></a>
+            <a class="button" ng-class="{disabled: lastBlock}" href="./#/blocks/{{blockNumber+1}}"
+                ng-if="blockNumber!==blockNum"><span class="translate-block-next">blockNext</span>&gt;</a>
+        </div>
+        <h1 style="margin-top: 10px; margin-bottom: 10px">
+            <i class="fa fa-cube"></i>
+            <span class="translate-block-table1-title">blockTable1Title</span>
+            <small>-
+                <span ng-if="blockType=='blocks'"
+                    class="translate-block-table1-title-small-block">blockTable1TitleSmallBlock</span>
+                <span ng-if="blockType=='uncleblocks'"
+                    class="translate-block-table1-title-small-uncle-block">blockTable1TitleSmallUncleBlock</span>
+                {{number}}
+                <span class="translate-block-table1-title-small-after"></span></small>
+        </h1>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr ng-if="blockType == 'uncleblocks'">
+                        <td class="translate-block-table1-row00">blockTable1Row00</td>
+                        <td>
+                            {{CanonicalBlockNumber}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row01">blockTable1Row01</td>
+                        <td>
+                            {{number}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row02">blockTable1Row02</td>
+                        <td>{{ hash }}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row03">blockTable1Row03</td>
+                        <td>
+                            <span style="margin-right: 1rem;"
+                                ng-if="blockType=='uncleblocks'">{{age}}</span>{{timestamp}}
+                        </td>
+                    </tr>
+                    <tr ng-if="blockType=='blocks'">
+                        <td class="translate-block-table1-row04">blockTable1Row04</td>
+                        <td>
+                            <span style="font-weight: bold;" class="green">{{conf}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row05">blockTable1Row05</td>
+                        <td>
+                            {{ difficulty | diffFormat }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row06">blockTable1Row06</td>
+                        <td>{{nonce}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row07">blockTable1Row07</td>
+                        <td>{{size}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row08">blockTable1Row08</td>
+                        <td>
+                            <a href="./#/address/{{miner}}">{{miner}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row09">blockTable1Row09</td>
+                        <td>{{gasLimit}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row10">blockTable1Row10</td>
+                        <td>{{gasUsed}}</td>
+                    </tr>
+                    <tr ng-if="blockType=='blocks'">
+                        <td class="translate-block-table1-row11">blockTable1Row11</td>
+                        <td>{{ uncledata }}</td>
+                    </tr>
+                    <tr ng-if="blockType=='blocks'">
+                        <td class="translate-block-table1-row12">blockTable1Row12</td>
+                        <td>{{ rootHash }}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row13">blockTable1Row13</td>
+                        <td>{{ parentHash }}</td>
+                    </tr>
+                    <tr ng-if="blockType=='blocks'">
+                        <td class="translate-block-table1-row14">blockTable1Row14</td>
+                        <td>{{extraData}}</td>
+                    </tr>
+
+                    <tr ng-if="blockType=='blocks'">
+                        <td class="translate-block-table1-row15">blockTable1Row15</td>
+                        <td>{{dataFromHex}}</td>
+                    </tr>
+                    <tr ng-if="blockType=='uncleblocks'">
+                        <td class="translate-block-table1-row16">blockTable1Row16</td>
+                        <td>{{UncleBlockReward}} NBAI</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table1-row17">blockTable1Row17</td>
+                        <td>{{numberOfTransactions || 0}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div>
+        <h2 style="margin-top: 30px;">
+            <i class="fa fa-exchange"></i> <span class="translate-block-table2-title">blockTable2Title</span>
+            <small class="translate-block-table2-title-small">blockTable2TitleSmall</small>
+        </h2>
+        <div ng-if="!transactions || transactions.length == 0" class="translate-block-table2-no-transactions">
+            blockTable2NoTransactions
+        </div>
+
+
+        <div ng-repeat="tx in transactions" ng-if="transactions">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th colspan="2" style="text-align:left"><span
+                                class="translate-block-table2-header">blockTable2Header</span>
+                            #{{$index+1}}</th>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row1">blockTable2Row1</td>
+                        <td>
+                            <a href="./#/tx/{{tx.hash}}">{{tx.hash}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row2">blockTable2Row2</td>
+                        <td>
+                            <a href="./#/address/{{tx.t_from}}">{{tx.t_from}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row3">blockTable2Row3</td>
+                        <td>
+                            <a href="./#/address/{{tx.t_to}}">{{tx.t_to}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row5">blockTable2Row5</td>
+                        <td>{{tx.gas | toNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row6">blockTable2Row6</td>
+                        <td>
+                            <textarea disabled style="min-width: 100%; color: #08d410;">{{tx.input}}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-block-table2-row7">blockTable2Row7</td>
+                        <td>{{tx.value | toEth}} NBAI</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>
+
+</div>

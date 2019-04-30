@@ -1,0 +1,44 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form" style="padding-bottom: 2.5rem;">
+
+    <h1>
+        <i class="fa fa-trophy"></i> <span class="translate-accounts-page-title">Top accounts</span>
+    </h1>
+    <div class="topAccounts">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered topaccountsform">
+                <thead class="thead-inverse">
+                    <td class="text-center translate-accounts-table1-column1 width-min">
+                        Rank
+                    </td>
+                    <td class="text-left translate-accounts-table1-column2 width-large">
+                        Address
+                    </td>
+                    <td class="text-right translate-accounts-table1-column3 width-medium">
+                        Balance
+                    </td>
+                    <td class="text-center translate-accounts-table1-column4 width-min">
+                        Percentage
+                    </td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="account in accounts">
+                        <td class="text-center width-medium width-min">
+                            {{ account.index }}
+                        </td>
+                        <td class="text-left width-large">
+                            <a href="#/address/{{ account.wallet_address }}"><span
+                                    class="btn">{{account.wallet_address }}</span> </a>
+                        </td>
+                        <td class="text-right width-medium">
+                            {{ account.balance | balance }}
+                        </td>
+                        <td class="text-center width-min">
+                            {{ account.percentage | number: 2}} %
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

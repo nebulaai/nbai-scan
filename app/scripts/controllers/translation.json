@@ -1,0 +1,381 @@
+{
+    "en": {
+        "menuAccounts": "Top Accounts",
+        "menuUncleBlock": "Uncle Blocks",
+        "menuBlock": "Blockchain Info",
+
+        "linksTitle": "Helpful Links",
+        "linksWallet": "Wallet",
+        "linksOrion": "Orion",
+        "linksFoundation": "NBAI",
+        "copyrightContent": "©Nebula AI Explorer 2018",
+
+
+        "mainBoxTitle1": "Current Block",
+        "mainBoxTitle2": "Gas Limit",
+        "mainBoxTitle3": "Block Time",
+        "mainBoxTitle4": "Current Diff",
+
+        "mainTable1TitleSmall": "Most Recent Blocks in the Nebula Orion Network",
+        "mainTable1Title": "Recent Blocks",
+
+
+        "mainTable1Column1": "Block #",
+        "mainTable1Column2": "Block Hash",
+        "mainTable1Column3": "Difficulty",
+        "mainTable1Column4": "Miner",
+        "mainTable1Column5": "Size",
+        "mainTable1Column6": "Date",
+        "mainTable1Column7": "# of TXs",
+        "mainTable1Column8": "Gas used",
+
+        "mainTable2TitleSmall": "Transactions in the Nebula Orion Network",
+        "mainTable2Title": "Recent Transactions",
+
+
+        "mainTable2Column1": "TX Hash",
+        "mainTable2Column2": "Block #",
+        "mainTable2Column3": "From",
+        "mainTable2Column4": "To",
+        "mainTable2Column5": "Gas Used",
+        "mainTable2Column6": "Value",
+
+        "transactionPageTitleSmall": "View information about an Nebula Orion transaction",
+        "transactionPageTitle": "Transaction",
+
+
+        "transactionConfirm": "Confirmations",
+
+        "transactionTable1Title": "Summary",
+
+
+        "transactionTable1Row1": "Block Hash",
+        "transactionTable1Row2": "Received Time",
+        "transactionTable1Row3": "Included In Block",
+        "transactionTable1Row4": "Gas Used",
+        "transactionTable1Row5": "Gas Price",
+        "transactionTable1Row6": "Transaction Confirmations",
+        "transactionTable1Row7": "Number of transactions made by the sender prior to this one",
+        "transactionTable1Row8": "Transaction price",
+        "transactionTable1Row9": "Data",
+
+        "transactionTable2Title": "Trigger Smart Contract",
+        "transactionTable2TitleSmall": "- Smart contract event logs",
+        "transactionTable2ContractTitle": "Contract address",
+
+        "transactionTable2Row1": "Event Name",
+        "transactionTable2Row2": "Contract Name",
+        "transactionTable2Row4": "Indexed Data",
+        "transactionTable2Row5": "Data",
+
+
+        "searchButton": "Search",
+
+        "chainPageTitleSmall": "View information about the Orion Blockchain",
+        "chainPageTitle": "Nebula Information",
+
+
+        "chainTable1Title": "Summary",
+
+        "chainTable1Row1": "Current Block",
+        "chainTable1Row2": "Block Time",
+        "chainTable1Row3": "Block Time Averages",
+        "chainTable1Row4": "Current Difficulty",
+        "chainTable1Row5": "Total Difficulty",
+        "chainTable1Row6": "Gas Limit",
+        "chainTable1Row7": "Time",
+        "chainTable1Row8": "Connected to Nebula Network",
+        "chainTable1Row9": "API/Client Version",
+
+        "chainTable1SinceLast": "seconds since block",
+        "chainTable1Since000010": "seconds for the past 10 blocks",
+        "chainTable1Since000100": "seconds for the past 100 blocks",
+        "chainTable1Since001000": "seconds for the past 1,000 blocks",
+        "chainTable1Since010000": "seconds for the past 10,000 blocks",
+        "chainTable1Since100000": "seconds for the past 100,000 blocks",
+        "chainTable1SinceAllBefore": "seconds for all",
+        "chainTable1SinceAllAfter": "blocks",
+
+        "blockPageTitleBeforeBlock": "Block",
+        "blockPageTitleBeforeUncleBlock": "Uncle Block",
+        "blockPageTitleAfter": "",
+        "blockPageTitle": "View information about Nebula Orion",
+
+        "blockGas": "Gas Used",
+
+        "blockPrevious": "Prev",
+        "blockNext": "Next",
+
+        "blockTable1TitleBeforeBlock": "information of block",
+        "blockTable1TitleSmallBlock": "Information Of Block",
+        "blockTable1TitleBeforeUncleBlock": "information of uncle block",
+        "blockTable1TitleSmallUncleBlock": "Information Of Uncle Block",
+        "blockTable1TitleSmallAfter": "",
+        "blockTable1Title": "Summary",
+
+        "blockTable1Row00": "Block Height",
+        "blockTable1Row01": "Block Number",
+        "blockTable1Row02": "Block Hash",
+        "blockTable1Row03": "Received Time",
+        "blockTable1Row04": "Confirmations",
+        "blockTable1Row05": "Difficulty",
+        "blockTable1Row06": "Nonce",
+        "blockTable1Row07": "Size",
+        "blockTable1Row08": "Miner",
+        "blockTable1Row09": "Gas Limit",
+        "blockTable1Row10": "Gas Used",
+        "blockTable1Row11": "Uncle Hash",
+        "blockTable1Row12": "State Root Hash",
+        "blockTable1Row13": "Parent Hash",
+        "blockTable1Row14": "Data",
+        "blockTable1Row15": "Data (Translated)",
+        "blockTable1Row16": "Uncle Reward",
+        "blockTable1Row17": "Number of Transactions",
+
+        "blockTable2TitleSmall": "- contained in current block",
+        "blockTable2Title": "Transactions",
+
+        "blockTable2NoTransactions": "There is no transactions inside this block",
+
+        "blockTable2Header": "Transaction",
+        "blockTable2Row1": "Hash #",
+        "blockTable2Row2": "From",
+        "blockTable2Row3": "To",
+        "blockTable2Row4": "Contract Address",
+        "blockTable2Row5": "Gas",
+        "blockTable2Row6": "Input",
+        "blockTable2Row7": "Value",
+
+        "addressPageTitleSmall": "View information about an Orion Address",
+        "addressPageTitle": "Address",
+
+        "addressTable1Title": "Summary",
+
+        "addressTable1Row1": "Current Balance",
+        "addressTable1Row2": "Transaction Count （# of outgoing TXs)",
+        "addressTable1Row3": "Code",
+
+        "addressTable1Currency": "Value in USD:",
+
+        "addressTable2Title": "Transactions History",
+
+        "addressTable2Column1": "TxHash",
+        "addressTable2Column2": "Block",
+        "addressTable2Column3": "Date",
+        "addressTable2Column4": "From",
+        "addressTable2Column5": "",
+        "addressTable2Column6": "To",
+        "addressTable2Column7": "Value",
+        "addressTable2Column8": "Gas Used",
+        "addressTable2Column9": "Gas Price",
+
+        "addressTable2In": "IN",
+        "addressTable2Out": "OUT",
+        "addressTable2Self": "SELF",
+
+        "accountsPageTitleSmall": "in the Nebula Orion Network",
+        "accountsPageTitle": "Top accounts",
+
+
+        "accountsTable1Column1": "Rank",
+        "accountsTable1Column2": "Address",
+        "accountsTable1Column3": "Balance",
+        "accountsTable1Column4": "Percentage",
+
+        "uncleblocklistPageTitle": "Uncle Blocks",
+        "uncleBlockListColumn1": "Block Height",
+        "uncleBlockListColumn2": "Uncle Number",
+        "uncleBlockListColumn3": "Block Hash",
+        "uncleBlockListColumn4": "Age",
+        "uncleBlockListColumn5": "Miner",
+        "uncleBlockListColumn6": "Reward"
+    },
+    "ch": {
+        "menuAccounts": "钱包排行榜",
+        "menuUncleBlock": "叔块",
+        "menuBlock": "区块链信息",
+
+        "linksTitle": "相关链接",
+        "linksWallet": "钱包",
+        "linksOrion": "Orion",
+        "linksFoundation": "NBAI",
+        "copyrightContent": "©Nebula AI 区块链浏览器 2018",
+
+
+        "mainBoxTitle1": "当前区块",
+        "mainBoxTitle2": "Gas 限制",
+        "mainBoxTitle3": "出块间隔",
+        "mainBoxTitle4": "当前困难度",
+
+        "mainTable1Title": "最近区块",
+        "mainTable1TitleSmall": "Nebula Orion 网络的最近区块",
+
+        "mainTable1Column1": "<i class=\"fa fa-cube\"></i>&nbsp;区块 #",
+        "mainTable1Column2": "区块哈希值",
+        "mainTable1Column3": "困难度",
+        "mainTable1Column4": "矿工",
+        "mainTable1Column5": "大小",
+        "mainTable1Column6": "时间",
+        "mainTable1Column7": "交易数量",
+        "mainTable1Column8": "已使用Gas",
+
+        "mainTable2Title": "最近交易",
+        "mainTable2TitleSmall": "Nebula Orion 网络的最近交易",
+
+        "mainTable2Column1": "交易哈希值",
+        "mainTable2Column2": "区块号",
+        "mainTable2Column3": "转出地址",
+        "mainTable2Column4": "转入地址",
+        "mainTable2Column5": "已使用Gas",
+        "mainTable2Column6": "价值",
+
+        "transactionPageTitle": "交易",
+        "transactionPageTitleSmall": "Nebula Orion 交易明细",
+
+        "transactionConfirm": "确认",
+
+        "transactionTable1Title": "摘要",
+
+        "transactionTable1Row1": "区块哈希值",
+        "transactionTable1Row2": "到账时间",
+        "transactionTable1Row3": "包含区块",
+        "transactionTable1Row4": "已使用Gas",
+        "transactionTable1Row5": "Gas价格",
+        "transactionTable1Row6": "交易确认数",
+        "transactionTable1Row7": "转出地址在此之前进行的交易次数",
+        "transactionTable1Row8": "交易费用",
+        "transactionTable1Row9": "交易时间",
+
+        "transactionTable2Title": "触发智能合约",
+        "transactionTable2TitleSmall": "- 智能合约事件日志",
+        "transactionTable2ContractTitle": "合约地址",
+
+        "transactionTable2Row1": "事件名称",
+        "transactionTable2Row2": "合约名称",
+        "transactionTable2Row4": "索引数据",
+        "transactionTable2Row5": "数据",
+
+
+        "searchButton": "搜索",
+
+
+        "chainPageTitle": "Nebula信息",
+        "chainPageTitleSmall": "Orion 区块链相关信息",
+
+        "chainTable1Title": "摘要",
+
+        "chainTable1Row1": "当前区块",
+        "chainTable1Row2": "出块间隔",
+        "chainTable1Row3": "平均出块间隔",
+        "chainTable1Row4": "当前困难度",
+        "chainTable1Row5": "总困难度",
+        "chainTable1Row6": "Gas限制",
+        "chainTable1Row7": "出块时间",
+        "chainTable1Row8": "已连接至Nebula网络",
+        "chainTable1Row9": "应用程序接口/客户端版本",
+
+        "chainTable1SinceLast": "秒距离区块",
+        "chainTable1SinceT000010": "秒（之前10个区块）",
+        "chainTable1SinceT000100": "秒（之前100个区块）",
+        "chainTable1SinceT001000": "秒（之前1000个区块）",
+        "chainTable1SinceT010000": "秒（之前10000个区块）",
+        "chainTable1SinceT100000": "秒（之前100000个区块）",
+        "chainTable1SinceAllBefore": "秒（全部",
+        "chainTable1SinceAllAfter": "区块）",
+
+
+        "blockPageTitle": "Nebula Orion 区块",
+        "blockPageTitleBeforeBlock": "",
+        "blockPageTitleBeforeUncleBlock": "",
+        "blockPageTitleAfter": "相关信息",
+
+        "blockGas": "已使用Gas",
+
+        "blockPrevious": "上一个",
+        "blockNext": "下一个",
+
+        "blockTable1TitleSmallBlock": "区块信息",
+        "blockTable1TitleSmallUncleBlock": "叔块信息",
+        "blockTable1Title": "摘要",
+        "blockTable1TitleBeforeBlock": "区块",
+        "blockTable1TitleBeforeUncleBlock": "叔块",
+        "blockTable1TitleAfter": "相关信息",
+
+        "blockTable1Row00": "区块高",
+        "blockTable1Row01": "区块号",
+        "blockTable1Row02": "区块哈希值",
+        "blockTable1Row03": "出块时间",
+        "blockTable1Row04": "确认",
+        "blockTable1Row05": "困难度",
+        "blockTable1Row06": "Nonce",
+        "blockTable1Row07": "大小",
+        "blockTable1Row08": "矿工",
+        "blockTable1Row09": "Gas限制",
+        "blockTable1Row10": "已使用Gas",
+        "blockTable1Row11": "Uncle哈希值",
+        "blockTable1Row12": "State根哈希值",
+        "blockTable1Row13": "父区块哈希值",
+        "blockTable1Row14": "数据",
+        "blockTable1Row15": "Data (Translated)",
+        "blockTable1Row16": "叔块奖励",
+        "blockTable1Row17": "交易数量",
+
+        "blockTable2Title": "交易",
+        "blockTable2TitleSmall": "- 当前区块中包含",
+
+        "blockTable2NoTransactions": "当前区块中没有交易信息",
+
+        "blockTable2Header": "交易",
+        "blockTable2Row1": "哈希值值",
+        "blockTable2Row2": "转出地址",
+        "blockTable2Row3": "转入地址",
+        "blockTable2Row4": "合约地址",
+        "blockTable2Row5": "Gas",
+        "blockTable2Row6": "输入",
+        "blockTable2Row7": "价值",
+
+
+        "addressPageTitle": "地址",
+        "addressPageTitleSmall": "Orion地址相关信息",
+
+        "addressTable1Title": "摘要",
+
+        "addressTable1Row1": "当前余额",
+        "addressTable1Row2": "交易次数（转出交易）",
+        "addressTable1Row3": "代码",
+
+        "addressTable1Currency": "相当于美元:",
+
+        "addressTable2Title": "交易历史记录",
+
+        "addressTable2Column1": "交易哈希值",
+        "addressTable2Column2": "区块号",
+        "addressTable2Column3": "交易日期",
+        "addressTable2Column4": "转出地址",
+        "addressTable2Column5": "",
+        "addressTable2Column6": "转入地址",
+        "addressTable2Column7": "转账金额",
+        "addressTable2Column8": "已使用Gas",
+        "addressTable2Column9": "Gas价格",
+
+        "addressTable2In": "转入",
+        "addressTable2Out": "转出",
+        "addressTable2Self": "自转",
+
+        "accountsPageTitle": "钱包排行榜",
+        "accountsPageTitleSmall": "在Nebula Orion网络",
+
+        "accountsTable1Column1": "排行",
+        "accountsTable1Column2": "地址",
+        "accountsTable1Column3": "余额",
+        "accountsTable1Column4": "份额",
+
+        "uncleblocklistPageTitle": "叔块",
+        "uncleBlockListColumn1": "区块高",
+        "uncleBlockListColumn2": "叔块号",
+        "uncleBlockListColumn3": "区块哈希值",
+        "uncleBlockListColumn4": "已产生",
+        "uncleBlockListColumn5": "矿工",
+        "uncleBlockListColumn6": "奖励"
+    }
+}

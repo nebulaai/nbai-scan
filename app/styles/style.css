@@ -1,0 +1,534 @@
+body {
+  background-color: #f7f7f7;
+  color: #333; }
+  body .container {
+    width: 80%;
+    max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto; }
+    body .container h2 small {
+      color: #333; }
+    @media (min-width: 981px) {
+      body .container {
+        min-width: 900px; } }
+    @media (max-width: 980px) {
+      body .container {
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0; } }
+  body .transactionsHistory,
+  body .topAccounts {
+    margin-top: 2.5rem;
+    font-size: 1.5rem; }
+    body .transactionsHistory tr,
+    body .topAccounts tr {
+      height: 4rem;
+      text-align: center;
+      border-top: 1px dotted grey;
+      border-bottom: 1px dotted grey;
+      padding-top: 1em; }
+      body .transactionsHistory tr span.type,
+      body .topAccounts tr span.type {
+        color: #fff;
+        border-radius: 5px;
+        display: block;
+        width: 40px;
+        height: 22px;
+        margin: 0 auto; }
+        body .transactionsHistory tr span.type.in,
+        body .topAccounts tr span.type.in {
+          background-color: #5cb85c; }
+        body .transactionsHistory tr span.type.out,
+        body .topAccounts tr span.type.out {
+          background-color: #e67e22; }
+        body .transactionsHistory tr span.type.self,
+        body .topAccounts tr span.type.self {
+          background-color: #e20d8a; }
+        body .transactionsHistory tr span.type span,
+        body .topAccounts tr span.type span {
+          font-size: 1.2rem; }
+    body .transactionsHistory .pagination,
+    body .topAccounts .pagination {
+      border: none;
+      margin: 2rem 0 4rem 0;
+      text-align: right;
+      width: 100%;
+      height: 1.5rem;
+      padding-top: 0.5rem; }
+      body .transactionsHistory .pagination span,
+      body .topAccounts .pagination span {
+        padding: 0 0.5rem;
+        cursor: pointer; }
+        body .transactionsHistory .pagination span.current,
+        body .topAccounts .pagination span.current {
+          background: #6700d3;
+          color: #fff; }
+      body .transactionsHistory .pagination select,
+      body .topAccounts .pagination select {
+        margin-left: 2rem; }
+      body .transactionsHistory .pagination button,
+      body .topAccounts .pagination button {
+        background: transparent;
+        border: 1px solid #b7b7b7; }
+  body nav.navbar {
+    background-color: transparent;
+    margin: 0;
+    font-size: 1.4rem; }
+    @media (max-width: 480px) {
+      body nav.navbar {
+        background: #7c43f1; } }
+    body nav.navbar .container {
+      padding-right: 1%; }
+      body nav.navbar .container .navbar-header a img {
+        height: 2.5rem; }
+        @media (max-width: 480px) {
+          body nav.navbar .container .navbar-header a img {
+            height: 2.5rem; } }
+        @media (max-width: 360px) {
+          body nav.navbar .container .navbar-header a img {
+            height: 2rem; } }
+      body nav.navbar .container .navbar-collapse ul.nav li {
+        text-align: center;
+        font-size: 1.4rem; }
+        body nav.navbar .container .navbar-collapse ul.nav li a {
+          background-color: transparent !important;
+          width: 100%;
+          font-size: 1.4rem; }
+          body nav.navbar .container .navbar-collapse ul.nav li a:hover, body nav.navbar .container .navbar-collapse ul.nav li a:focus {
+            background: transparent !important; }
+          body nav.navbar .container .navbar-collapse ul.nav li a.info {
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            margin-top: 1rem; }
+        body nav.navbar .container .navbar-collapse ul.nav li.lang-r {
+          height: 60px;
+          line-height: 60px;
+          text-align: center; }
+          body nav.navbar .container .navbar-collapse ul.nav li.lang-r a:hover,
+          body nav.navbar .container .navbar-collapse ul.nav li.lang-r a:focus {
+            color: #3312eb;
+            text-decoration: none; }
+      body nav.navbar .container .navbar-collapse ul.nav .separe {
+        width: 5px; }
+        body nav.navbar .container .navbar-collapse ul.nav .separe a {
+          padding-left: 2px;
+          padding-right: 2px; }
+  body .top {
+    background: url(../img/blockchian-browser_03.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -7rem;
+    padding-top: 10rem;
+    margin-bottom: -4rem; }
+    @media (max-width: 480px) {
+      body .top {
+        top: -8.5rem; } }
+    body .top .row .navbar-form .input-group input.searchimain {
+      background-color: #fff !important;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-color: transparent;
+      color: #000; }
+    body .top .row .navbar-form .input-group .input-group-btn .btn-bluem {
+      background-color: #6700d3 !important;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-color: transparent !important; }
+    body .top .row.four {
+      display: flex;
+      justify-content: center;
+      margin-top: 8rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap; }
+      @media (max-width: 480px) {
+        body .top .row.four {
+          margin-top: 2rem; } }
+      body .top .row.four .outer {
+        padding: 0; }
+        body .top .row.four .outer .boxi {
+          background: transparent;
+          border-right: 1px solid #fff;
+          padding-top: 0;
+          padding-bottom: 0;
+          border-radius: 0; }
+          body .top .row.four .outer .boxi .title {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+            text-transform: uppercase; }
+        body .top .row.four .outer:last-child .boxi {
+          border: none; }
+        @media (max-width: 600px) {
+          body .top .row.four .outer:nth-child(2) .boxi {
+            border: none; } }
+        @media (max-width: 600px) {
+          body .top .row.four .outer .boxi {
+            width: 100%; } }
+    body .top.without {
+      padding-bottom: 6rem; }
+  @media (min-width: 480px) {
+    body .container.form .separ-rm {
+      display: none; } }
+  @media (max-width: 480px) {
+    body .container.form {
+      margin-top: 5rem; }
+      body .container.form .separ-r {
+        display: none; } }
+  body .container.form h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: #6d23d8;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+    @media (max-width: 480px) {
+      body .container.form h1 {
+        font-size: 2rem; } }
+    body .container.form h1 small {
+      color: #6d23d8;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 0; }
+    body .container.form h1 img {
+      width: 4rem;
+      margin-right: 2rem; }
+    body .container.form h1 i {
+      margin-right: 2rem; }
+    @media (max-width: 480px) {
+      body .container.form h1 {
+        font-size: 2rem; }
+        body .container.form h1 img {
+          width: 3rem;
+          margin-right: 1rem; }
+        body .container.form h1 i {
+          margin-right: 0.5rem; } }
+  body .container.form table {
+    width: 100%;
+    border: none;
+    box-shadow: 4px 4px 5px rgba(216, 216, 216, 0.5); }
+    body .container.form table .btn {
+      font-size: 1.5rem; }
+    body .container.form table thead {
+      background-color: #fff;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px dotted #333; }
+      body .container.form table thead td {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        color: #333;
+        border: 1px dotted #b7b7b7;
+        border-top: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        body .container.form table thead td.no-left {
+          border-left: none; }
+        body .container.form table thead td.no-right {
+          border-right: none; }
+    body .container.form table tbody tr {
+      border: 1px dotted #b7b7b7;
+      border-left: none;
+      border-right: none; }
+      body .container.form table tbody tr:nth-of-type(odd) {
+        background-color: #fff; }
+      body .container.form table tbody tr:nth-of-type(even) {
+        background-color: #fff; }
+      body .container.form table tbody tr a {
+        color: #333; }
+        body .container.form table tbody tr a:hover {
+          color: #6d23d8; }
+        body .container.form table tbody tr a span.btn:hover {
+          color: #6d23d8; }
+      body .container.form table tbody tr td {
+        border: 1px dotted #b7b7b7;
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        body .container.form table tbody tr td a {
+          width: 100%; }
+          body .container.form table tbody tr td a span {
+            width: 100%;
+            padding: 0; }
+        body .container.form table tbody tr td.no-left {
+          border-left: none; }
+        body .container.form table tbody tr td.no-right {
+          border-right: none; }
+        body .container.form table tbody tr td span.green {
+          color: #79ce61; }
+      body .container.form table tbody tr:last-child {
+        border-bottom: none; }
+        body .container.form table tbody tr:last-child td {
+          border-bottom: none; }
+    body .container.form table.table-striped tbody tr {
+      border-left: none;
+      border-right: none; }
+      body .container.form table.table-striped tbody tr:first-child {
+        border-top: none; }
+        body .container.form table.table-striped tbody tr:first-child td {
+          border-top: none; }
+      body .container.form table.table-striped tbody tr:last-child {
+        border-bottom: none; }
+        body .container.form table.table-striped tbody tr:last-child td {
+          border-bottom: none; }
+      body .container.form table.table-striped tbody tr td:first-child {
+        border-left: none; }
+      body .container.form table.table-striped tbody tr td:last-child {
+        border-right: none; }
+    body .container.form table td .glyphicon {
+      background: linear-gradient(to right, #812dc9, #7a4bff);
+      padding: 1rem;
+      border-radius: 50%; }
+      body .container.form table td .glyphicon::before {
+        color: #fff; }
+  body .container.form hr {
+    margin-top: 5rem;
+    border-top: 1px solid #fff; }
+  body .container.form.small, body .container.form.small-r {
+    width: 70%;
+    max-width: 1080px;
+    padding-top: 15px;
+    padding-bottom: 25px; }
+    body .container.form.small table, body .container.form.small-r table {
+      margin-top: 2rem; }
+      body .container.form.small table .btn, body .container.form.small-r table .btn {
+        font-size: 1.5rem; }
+      body .container.form.small table thead, body .container.form.small-r table thead {
+        background-color: #fff;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px dotted #333; }
+        body .container.form.small table thead td, body .container.form.small-r table thead td {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          color: #333;
+          border: 1px dotted #b7b7b7;
+          border-top: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          body .container.form.small table thead td.no-left, body .container.form.small-r table thead td.no-left {
+            border-left: none; }
+          body .container.form.small table thead td.no-right, body .container.form.small-r table thead td.no-right {
+            border-right: none; }
+      body .container.form.small table tbody tr, body .container.form.small-r table tbody tr {
+        border: 1px dotted #b7b7b7;
+        border-left: none;
+        border-right: none; }
+        body .container.form.small table tbody tr:nth-of-type(odd), body .container.form.small-r table tbody tr:nth-of-type(odd) {
+          background-color: #fff; }
+        body .container.form.small table tbody tr:nth-of-type(even), body .container.form.small-r table tbody tr:nth-of-type(even) {
+          background-color: #fff; }
+        body .container.form.small table tbody tr a, body .container.form.small-r table tbody tr a {
+          color: #333; }
+          body .container.form.small table tbody tr a:hover, body .container.form.small-r table tbody tr a:hover {
+            color: #6d23d8; }
+          body .container.form.small table tbody tr a span.btn:hover, body .container.form.small-r table tbody tr a span.btn:hover {
+            color: #6d23d8; }
+        body .container.form.small table tbody tr td, body .container.form.small-r table tbody tr td {
+          border: 1px dotted #b7b7b7;
+          width: 100px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          body .container.form.small table tbody tr td a, body .container.form.small-r table tbody tr td a {
+            width: 100%; }
+            body .container.form.small table tbody tr td a span, body .container.form.small-r table tbody tr td a span {
+              width: 100%;
+              padding: 0; }
+          body .container.form.small table tbody tr td.no-left, body .container.form.small-r table tbody tr td.no-left {
+            border-left: none; }
+          body .container.form.small table tbody tr td.no-right, body .container.form.small-r table tbody tr td.no-right {
+            border-right: none; }
+          body .container.form.small table tbody tr td span.green, body .container.form.small-r table tbody tr td span.green {
+            color: #79ce61; }
+        body .container.form.small table tbody tr:last-child, body .container.form.small-r table tbody tr:last-child {
+          border-bottom: none; }
+          body .container.form.small table tbody tr:last-child td, body .container.form.small-r table tbody tr:last-child td {
+            border-bottom: none; }
+      body .container.form.small table thead, body .container.form.small-r table thead {
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 4px; }
+        body .container.form.small table thead td, body .container.form.small-r table thead td {
+          font-size: 1rem; }
+      body .container.form.small table tbody tr td, body .container.form.small-r table tbody tr td {
+        padding-top: 1rem;
+        padding-bottom: 1rem; }
+        body .container.form.small table tbody tr td textarea, body .container.form.small-r table tbody tr td textarea {
+          min-width: 100%;
+          background: transparent;
+          color: #79ce61;
+          scrollbar-base-color: #6700d3; }
+    body .container.form.small > .boxi, body .container.form.small-r > .boxi {
+      background: linear-gradient(to right, #812dc9, #7a4bff);
+      border-radius: 15px; }
+    @media (max-width: 480px) {
+      body .container.form.small #block .little-r span,
+      body .container.form.small #block .little-r a, body .container.form.small-r #block .little-r span,
+      body .container.form.small-r #block .little-r a {
+        padding-left: 5px;
+        padding-right: 5px; } }
+    body .container.form.small #block .button, body .container.form.small-r #block .button {
+      font-size: 1.4rem;
+      padding: 0.2rem 1.5rem;
+      color: #333; }
+      body .container.form.small #block .button:hover, body .container.form.small-r #block .button:hover {
+        text-decoration: none;
+        color: #6d23d8; }
+      body .container.form.small #block .button.right-border, body .container.form.small-r #block .button.right-border {
+        border-right: 1px solid #333; }
+    body .container.form.small #block.margin-top, body .container.form.small-r #block.margin-top {
+      margin-top: 2rem; }
+    @media (max-width: 980px) {
+      body .container.form.small, body .container.form.small-r {
+        width: 90%; } }
+    @media (max-width: 480px) {
+      body .container.form.small, body .container.form.small-r {
+        padding-top: 30px;
+        padding-bottom: 30px; } }
+  body .container.form.small-r {
+    width: 80%;
+    max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto; }
+    @media (min-width: 981px) {
+      body .container.form.small-r {
+        min-width: 900px; } }
+    @media (max-width: 980px) {
+      body .container.form.small-r {
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0; } }
+  @media (max-width: 480px) {
+    body .container.form {
+      top: -6rem;
+      position: relative; } }
+  body #address .addressId {
+    font-size: 32px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+    display: inline-block; }
+    @media (max-width: 980px) {
+      body #address .addressId {
+        font-size: 20px; } }
+    @media (max-width: 480px) {
+      body #address .addressId {
+        font-size: 12px; } }
+  body .smart-box {
+    margin: 30px 0; }
+    body .smart-box h4 {
+      margin: 3rem 0 1.5rem 0; }
+
+div.table-responsive table.recentblockform {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px; }
+  div.table-responsive table.recentblockform thead, div.table-responsive table.recentblockform tbody {
+    table-layout: fixed;
+    width: 100%; }
+    div.table-responsive table.recentblockform thead tr td.width-min, div.table-responsive table.recentblockform tbody tr td.width-min {
+      width: 90px; }
+    div.table-responsive table.recentblockform thead tr td.width-medium, div.table-responsive table.recentblockform tbody tr td.width-medium {
+      width: 200px; }
+    div.table-responsive table.recentblockform thead tr td.width-large, div.table-responsive table.recentblockform tbody tr td.width-large {
+      text-align: left; }
+      @media (max-width: 767px) {
+        div.table-responsive table.recentblockform thead tr td.width-large, div.table-responsive table.recentblockform tbody tr td.width-large {
+          width: 200px; } }
+
+div.table-responsive table.recenttransactionsform {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px; }
+  div.table-responsive table.recenttransactionsform thead, div.table-responsive table.recenttransactionsform tbody {
+    table-layout: fixed;
+    width: 100%; }
+    div.table-responsive table.recenttransactionsform thead tr, div.table-responsive table.recenttransactionsform tbody tr {
+      text-align: center; }
+      div.table-responsive table.recenttransactionsform thead tr td.width-min, div.table-responsive table.recenttransactionsform tbody tr td.width-min {
+        width: 90px; }
+      div.table-responsive table.recenttransactionsform thead tr td.width-medium, div.table-responsive table.recenttransactionsform tbody tr td.width-medium {
+        width: 140px; }
+      div.table-responsive table.recenttransactionsform thead tr td.width-large-s, div.table-responsive table.recenttransactionsform tbody tr td.width-large-s {
+        width: 22%; }
+        @media (max-width: 767px) {
+          div.table-responsive table.recenttransactionsform thead tr td.width-large-s, div.table-responsive table.recenttransactionsform tbody tr td.width-large-s {
+            width: 200px; } }
+      @media (max-width: 767px) {
+        div.table-responsive table.recenttransactionsform thead tr td.width-large, div.table-responsive table.recenttransactionsform tbody tr td.width-large {
+          width: 200px; } }
+
+div.table-responsive table.topaccountsform {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px; }
+  @media (max-width: 767px) {
+    div.table-responsive table.topaccountsform {
+      min-width: 700px; } }
+  div.table-responsive table.topaccountsform thead, div.table-responsive table.topaccountsform tbody {
+    table-layout: fixed;
+    width: 100%; }
+    div.table-responsive table.topaccountsform thead tr, div.table-responsive table.topaccountsform tbody tr {
+      text-align: center; }
+      div.table-responsive table.topaccountsform thead tr td.width-min, div.table-responsive table.topaccountsform tbody tr td.width-min {
+        width: 120px; }
+      div.table-responsive table.topaccountsform thead tr td.width-medium, div.table-responsive table.topaccountsform tbody tr td.width-medium {
+        width: 250px; }
+      @media (max-width: 767px) {
+        div.table-responsive table.topaccountsform thead tr td.width-large, div.table-responsive table.topaccountsform tbody tr td.width-large {
+          width: 200px; } }
+      div.table-responsive table.topaccountsform thead tr td.width-large a span, div.table-responsive table.topaccountsform tbody tr td.width-large a span {
+        text-align: left; }
+
+div.table-responsive table.transactionsHistoryform {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px; }
+  @media (max-width: 767px) {
+    div.table-responsive table.transactionsHistoryform {
+      min-width: 900px; } }
+  div.table-responsive table.transactionsHistoryform thead, div.table-responsive table.transactionsHistoryform tbody {
+    table-layout: fixed;
+    width: 100%; }
+    div.table-responsive table.transactionsHistoryform thead tr, div.table-responsive table.transactionsHistoryform tbody tr {
+      text-align: center; }
+      div.table-responsive table.transactionsHistoryform thead tr td, div.table-responsive table.transactionsHistoryform tbody tr td {
+        vertical-align: middle;
+        height: 3rem; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-min, div.table-responsive table.transactionsHistoryform tbody tr td.width-min {
+        width: 85px;
+        padding: 15px 3px; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-min-m, div.table-responsive table.transactionsHistoryform tbody tr td.width-min-m {
+        width: 65px; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-medium, div.table-responsive table.transactionsHistoryform tbody tr td.width-medium {
+        width: 200px; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-medium-l, div.table-responsive table.transactionsHistoryform tbody tr td.width-medium-l {
+        width: 150px; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-large-s, div.table-responsive table.transactionsHistoryform tbody tr td.width-large-s {
+        width: 150px; }
+      div.table-responsive table.transactionsHistoryform thead tr td.width-large, div.table-responsive table.transactionsHistoryform tbody tr td.width-large {
+        width: 200px; }
+
+.footer.styledfoot {
+  background: linear-gradient(to right, #812dc9, #7a4bff);
+  padding-top: 2rem; }
+  .footer.styledfoot .logo img {
+    height: 2.5rem;
+    margin-bottom: 2rem; }
+  .footer.styledfoot .links {
+    margin-bottom: 2rem; }
+    .footer.styledfoot .links h4 {
+      font-size: 1.8rem; }
+    .footer.styledfoot .links .link {
+      padding: 0 2rem;
+      border-right: 1px solid #fff; }
+      .footer.styledfoot .links .link a {
+        color: #fff;
+        font-size: 1.8rem; }
+      .footer.styledfoot .links .link:last-child {
+        border: none; }

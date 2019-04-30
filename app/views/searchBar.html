@@ -1,0 +1,20 @@
+<div class="top without">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <form class="navbar-form" ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form"
+                    role="search">
+                    <div class="input-group">
+                        <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required
+                            ng-model="ethRequest" class="form-control searchimain">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-bluem" type="submit" ng-click="processRequest()">
+                                <i class="fa fa-search"></i> <span
+                                    class="translate-search-button">Search</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form" style="padding-top: 10px;">
+    <h1>
+        <i class="fa fa-code"></i> <span class="translate-address-page-title">addressPageTitle</span>
+    </h1>
+    <br />
+    <!-- <hr> -->
+    <div id="address" class="blockdiv">
+        <div class="addressId" align="center">{{ addressId }}</div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th colspan="2" style="text-align:left" class="translate-address-table1-title">
+                            addressTable1Title</th>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row1">addressTable1Row1</td>
+                        <td>
+                            <span style="font-size: 24px; font-weight: lighter;">{{ balance | currency:'':2 }}
+                                NBAI</span>
+                            <br />(<span class="translate-address-table1-currency">addressTable1Currency</span> {{
+                            balanceusd | currency }})</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row2">addressTable1Row2
+                            <em>(# of outgoing TXs)</em>
+                        </td>
+                        <td>{{ txCount }}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row3">addressTable1Row3</td>
+                        <td><textarea disabled>{{ code }}</textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="transactionsHistory" ng-if="transaction">
+            <br />
+            <h2 class="translate-address-table2-title">addressTable2Title</h2>
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered transactionsHistoryform">
+                    <thead class="thead-inverse">
+                        <td class="text-center translate-address-table2-column1 width-large">
+                            addressTable2Column1
+                        </td>
+                        <td class="text-center translate-address-table2-column2 width-min">
+                            addressTable2Column2
+                        </td>
+                        <td class="text-center translate-address-table2-column3 width-medium">
+                            addressTable2Column3
+                        </td>
+                        <td class="text-center translate-address-table2-column4 width-large">
+                            addressTable2Column4
+                        </td>
+                        <td class="text-center translate-address-table2-column5 width-min-m">
+
+                        </td>
+                        <td class="text-center translate-address-table2-column6 width-large">
+                            addressTable2Column6
+                        </td>
+                        <td class="text-center translate-address-table2-column7 width-medium-l">
+                            addressTable2Column7
+                        </td>
+                        <td class="text-center translate-address-table2-column8 width-min">
+                            addressTable2Column8
+                        </td>
+                        <td class="text-center translate-address-table2-column9 width-medium-l">
+                            addressTable2Column9
+                        </td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center width-large">
+                                <a href="#/tx/{{ transaction.hash }}">
+                                    <span class="btn"> {{transaction.hash }}</span>
+                                </a>
+                            </td>
+                            <td class="text-center width-min">
+                                <a href="#/block/{{ transaction.block_number }}">{{transaction.block_number}}</a>
+                            </td>
+                            <td class="text-center width-medium">
+                                {{transaction.timestamp * 1000 | date:'medium'}}
+                            </td>
+                            <td class="text-center width-large">
+                                <span ng-if="addressId != (transaction.t_from | lowercase)"><a
+                                        href="#/address/{{ transaction.t_from }}"
+                                        class="text-omi">{{ transaction.t_from }}</a></span>
+                                <span ng-if="addressId == (transaction.t_from | lowercase)" class="text-omi">{{transaction.t_from
+                                    }}</span>
+                            </td>
+                            <td class="text-center width-min-m">
+                                <span class="type self" ng-if="transaction.type == 3"><span
+                                        class="translate-address-table2-self">addressTable2Self</span></span>
+                                <span class="type in" ng-if="transaction.type == 2"><span
+                                        class="translate-address-table2-in">addressTable2In</span></span>
+                                <span class="type out" ng-if="transaction.type == 1"><span
+                                        class="translate-address-table2-out">addressTable2Out</span></span>
+                            </td>
+                            <td class="text-center width-large">
+                                <span ng-if="addressId != (transaction.t_to | lowercase)"><a
+                                        href="#/address/{{ transaction.t_to }}">{{
+                                        transaction.t_to }}</a></span>
+                                <span ng-if="addressId == (transaction.t_to | lowercase)">{{ transaction.t_to }}</span>
+                            </td>
+                            <td class="text-center width-medium-l">
+                                {{transaction.value | balance }}
+                            </td>
+                            <td class="text-center width-min">
+                                {{transaction.gas | gasFormat }}
+                            </td>
+                            <td class="text-center width-medium-l">
+                                {{transaction.gas_price | gasPrice }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row pagination" ng-if="pages > 1">
+                <button class="button" ng-click="getTransactionsHistory(currentPage.val - 1)"
+                    ng-disabled="currentPage.val <= 1">
+                    Previous
+                </button>
+                <span ng-repeat="page in currentPageArr">
+                    <span ng-click="getTransactionsHistory(page)"
+                        ng-class="{'current': page == currentPage.val}">{{page}}</span>
+                </span>
+                <button class="button" ng-click="getTransactionsHistory(currentPage.val + 1)"
+                    ng-disabled="currentPage.val >= pages">
+                    Next
+                </button>
+                <select name="" id="" ng-change="getTransactionsHistory(currentPage.val)" ng-model="currentPage.val"
+                    ng-options="page for page in pageArr">
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
