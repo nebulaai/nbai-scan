@@ -1,0 +1,145 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form">
+    <h1><img src="img/transaction.png" alt="transaction">
+        <span class="translate-transaction-page-title">transactionPageTitle</span>
+    </h1>
+
+    <div id="tx-97785883" class="txdiv">
+        <div class="table-responsive">
+            <table class="table table-striped" cellpadding="0" cellspacing="0"
+                style="padding:0px;float:left;margin:0px;">
+                <tbody>
+                    <tr>
+                        <th colspan="3" align="left"><a class="hash-link" href="./#/tx/{{txId}}">{{txId}}</a> <span
+                                class="pull-right"></span></th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;vertical-align:middle;">
+                            <a href="./#/address/{{from}}">{{from}}</a>
+                            <br>
+                        </td>
+                        <td width="48px" class="" style="text-align:center;vertical-align:middle;">
+                            <span class=""><span class="glyphicon glyphicon-arrow-right"
+                                    aria-hidden="true"></span></button>
+                        </td>
+                        <td style="text-align:center;vertical-align:middle;">
+                            <a href="./#/address/{{to}}">{{to}}</a>
+                            <span class="pull-right">
+                                <span>{{ethValue}} NBAI</span>
+                            </span>
+                            <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="block" style="padding-bottom:30px;width:98.8%;text-align:right;clear:both" class="margin-top">
+            <!--TODO no style tags...-->
+            <span class="button">{{conf}} <span class="translate-transaction-confirm">transactionConfirm</span></span>
+            <span class="button cb"><span>{{ethValue}} NBAI</span></span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th colspan="2" style="text-align:left" class="translate-transaction-table1-title">
+                            transactionTable1Title</th>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row1">transactionTable1Row1</td>
+                        <td><a href="./#/block/{{blockHash}}">{{blockHash}}</a></td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row2">transactionTable1Row2</td>
+                        <td>
+                            {{time}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row3">transactionTable1Row3</td>
+                        <td>
+                            <a href="./#/block/{{blockNumber}}">{{blockNumber}}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row4">transactionTable1Row4</td>
+                        <td>{{gas | gasFormat}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row5">transactionTable1Row5</td>
+                        <td>{{gasPrice}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row6">transactionTable1Row6</td>
+                        <td><span style=" font-weight: bold;" class="green">{{conf}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row7">transactionTable1Row7</td>
+                        <td>{{nonce}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row8">transactionTable1Row8</td>
+                        <td>{{txprice}}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-transaction-table1-row9">transactionTable1Row9</td>
+                        <td><textarea disabled>{{input}}</textarea></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="smart-box" ng-if="smarts && smarts.length != 0">
+        <h2>
+            <i class="fa fa-exchange"></i> <span
+                class="translate-transaction-table2-title">transactionTable2Title</span>
+            <small class="translate-transaction-table2-title-small">transactionTable2TitleSmall</small>
+        </h2>
+        <div ng-repeat="address in addresses">
+            <h4><span class="translate-transaction-table2-contract-title">transactionTable2ContractTitle</span>:
+                {{address}}</h4>
+            <div ng-repeat="smart in smarts">
+                <table class="table table-striped" ng-if="address == smart.contract_address">
+                    <tbody>
+                        <tr>
+                            <td class="translate-transaction-table2-row1">transactionTable2Row1</td>
+                            <td>
+                                {{smart.event_name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="translate-transaction-table2-row2">transactionTable2Row2</td>
+                            <td>
+                                {{smart.contract_name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="translate-transaction-table2-contract-title">transactionTable2ContractTitle</td>
+                            <td>
+                                {{smart.contract_address}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="translate-transaction-table2-row4" colspan="2" ng-if="smart.indexed_data">
+                                transactionTable2Row4</th>
+                        </tr>
+                        <tr ng-repeat="key in smart.indexed_data_keys">
+                            <td>{{key | Name}}</td>
+                            <td>{{smart.indexed_data[key] | BigNum}}</td>
+                        </tr>
+                        <tr>
+                            <th class="translate-transaction-table2-row5" colspan="2" ng-if="smart.data">
+                                transactionTable2Row5</th>
+                        </tr>
+                        <tr ng-repeat="key in smart.data_keys">
+                            <td>{{key | Name}}</td>
+                            <td>{{smart.data[key] | BigNum}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

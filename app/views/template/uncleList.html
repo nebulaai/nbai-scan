@@ -1,0 +1,74 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form" style="padding-bottom: 2.5rem;">
+  <h1>
+    <i class="fa fa-trophy"></i>
+    <span class="translate-uncleblocklist-page-title">uncleblocklistPageTitle</span>
+  </h1>
+  <div class="topAccounts">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-bordered topaccountsform">
+        <thead class="thead-inverse">
+          <td class="text-center translate-uncle-block-list-column1 width-min">
+            uncleBlockListColumn1
+          </td>
+          <td class="text-center translate-uncle-block-list-column2 width-min">
+            uncleBlockListColumn2
+          </td>
+          <td class="text-center translate-uncle-block-list-column3 width-large">
+            uncleBlockListColumn3
+          </td>
+          <td class="text-center translate-uncle-block-list-column4 width-medium">
+            uncleBlockListColumn4
+          </td>
+          <td class="text-center translate-uncle-block-list-column5 width-medium">
+            uncleBlockListColumn5
+          </td>
+          <td class="text-center translate-uncle-block-list-column6 width-min">
+            uncleBlockListColumn6
+          </td>
+        </thead>
+        <tbody>
+          <tr ng-repeat="uncle in unclelist">
+            <td class="text-center width-min">
+              <a class="nounderline" href="#/blocks/{{ uncle.CanonicalBlockNumber }}">{{ uncle.CanonicalBlockNumber }}
+              </a>
+            </td>
+            <td class="text-center width-min">
+              <a class="nounderline" href="#/uncleblocks/{{ uncle.number }}">{{
+                uncle.number
+              }}</a>
+            </td>
+            <td class="text-left width-large">
+              <a class="nounderline" href="#/uncleblocks/{{ uncle.hash }}">{{
+                uncle.hash
+              }}</a>
+            </td>
+            <td class="text-center width-medium">{{ uncle.age }}</td>
+            <td class="text-left width-medium">
+              <a class="nounderline" href="#/address/{{ uncle.miner }}">
+                {{                uncle.miner
+              }}</a>
+            </td>
+            <td class="text-center width-min">
+              {{ uncle.UncleBlockReward / 1e18 }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row pagination" ng-if="pages > 1">
+      <button class="button" ng-click="getUncleList(currentPage.val - 1)" ng-disabled="currentPage.val <= 1">
+        Previous
+      </button>
+      <span ng-repeat="page in currentPageArr">
+        <span ng-click="getUncleList(page)" ng-class="{'current': page == currentPage.val}">{{ page }}</span>
+      </span>
+      <button class="button" ng-click="getUncleList(currentPage.val + 1)" ng-disabled="currentPage.val >= pages">
+        Next
+      </button>
+      <select name="" id="" ng-change="getUncleList(currentPage.val)" ng-model="currentPage.val"
+        ng-options="page for page in pageArr">
+      </select>
+    </div>
+  </div>
+</div>

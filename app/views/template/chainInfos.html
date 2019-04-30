@@ -1,0 +1,63 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form" style="padding-top: 10px;">
+    <h1>
+        <img src="img/info.png" alt="setting"> <span><span class = "translate-chain-page-title">chainPageTitle</span>
+    </h1>
+    <br/>
+    <div id="chain" class="blockdiv">
+        <div class="table-responsive">
+            <table class="table table-striped">
+            <thead>
+                <th colspan="2" style="text-align:left" class = "translate-chain-table1-title">chainTable1Title</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class = "translate-chain-table1-row1">chainTable1Row1</td>
+                    <td>
+                        <a href="./#/block/{{ blockNum }}">{{ blockNum }}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "translate-chain-table1-row2">chainTable1Row2</td>
+                    <td>
+                        {{ blocktime  | number:2}} <span class = "translate-chain-table1-since-last">chainTable1SinceLast</span>
+                        <a href="./#/block/{{ blockNum - 1 }}">{{ blockNum - 1 }}</a>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "translate-chain-table1-row3">chainTable1Row3</td>
+                    <td>
+                        {{ averages.latest10  | number:2}} <span class = "translate-chain-table1-since-t000010">seconds for the past 10 blocks</span>
+                        <br> {{ averages.latest100 | number:2}} <span class = "translate-chain-table1-since-t000100">seconds for the past 100 blocks</span>
+                        <br> {{ averages.latest1000  | number:2}} <span class = "translate-chain-table1-since-t001000">seconds for the past 1,000 blocks</span>
+                        <br> {{ averages.latest10000  | number:2}} <span class = "translate-chain-table1-since-t010000">seconds for the past 10,000 blocks</span>
+                        <br> {{ averages.latest100000  | number:2}} <span class = "translate-chain-table1-since-t100000">seconds for the past 100,000 blocks</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td  class = "translate-chain-table1-row4">chainTable1Row4</td>
+                    <td>{{ difficulty_formatted }}</td>
+                </tr>
+                <tr>
+                    <td  class = "translate-chain-table1-row6">chainTable1Row6</td>
+                    <td>{{ gasLimit }}</td>
+                </tr>
+                <tr>
+                    <td  class = "translate-chain-table1-row7">chainTable1Row7</td>
+                    <td>{{ time }}</td>
+                </tr>
+                <tr>
+                    <td  class = "translate-chain-table1-row8">chainTable1Row8</td>
+                    <td>{{ isConnected }}</td>
+                </tr>
+                <tr>
+                    <td  class = "translate-chain-table1-row9">chainTable1Row9</td>
+                    <td>{{ versionApi }} - {{ versionClient }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+</div>

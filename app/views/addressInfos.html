@@ -1,0 +1,139 @@
+<div ng-include="'views/searchBar.html'"></div>
+<div class="container form" style="padding-top: 10px;">
+    <h1>
+        <i class="fa fa-code"></i> <span class="translate-address-page-title">Address</span>
+    </h1>
+    <br />
+    <div id="address" class="blockdiv">
+        <div class="addressId" align="center">{{ addressId }}</div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th colspan="2" style="text-align:left" class="translate-address-table1-title">
+                            Summary</th>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row1">Current Balance</td>
+                        <td>
+                            <span style="font-size: 24px; font-weight: lighter;">{{ balance | currency:'':2 }}
+                                NBAI</span>
+                            <br />(<span class="translate-address-table1-currency">Value in USD:</span> {{
+                            balanceusd | currency }})</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row2">Transaction Count （# of outgoing TXs)
+                            <em>(# of outgoing TXs)</em>
+                        </td>
+                        <td>{{ txCount }}</td>
+                    </tr>
+                    <tr>
+                        <td class="translate-address-table1-row3">Code</td>
+                        <td><textarea disabled>{{ code }}</textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="transactionsHistory" ng-if="transactionsHistory">
+            <br />
+            <h2 class="translate-address-table2-title">Transactions History</h2>
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered transactionsHistoryform">
+                    <thead class="thead-inverse">
+                        <td class="text-left translate-address-table2-column1 width-large-s">
+                            TxHash
+                        </td>
+                        <td class="text-center translate-address-table2-column2 width-min">
+                            Block
+                        </td>
+                        <td class="text-center translate-address-table2-column3 width-medium">
+                            Date
+                        </td>
+                        <td class="translate-address-table2-column4 width-large text-left">
+                            From
+                        </td>
+                        <td class="text-center translate-address-table2-column5 width-min-m">
+
+                        </td>
+                        <td class="translate-address-table2-column6 width-large text-left">
+                            To
+                        </td>
+                        <td class="text-right translate-address-table2-column7 width-medium-l">
+                            Value
+                        </td>
+                        <td class="text-right translate-address-table2-column8 width-min">
+                            Gas Used
+                        </td>
+                        <td class="text-right translate-address-table2-column9 width-medium-l">
+                            Gas Price
+                        </td>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="transaction in transactionsHistory">
+                            <td class="text-left width-large-s">
+                                <a href="#/tx/{{ transaction.hash }}">
+                                    <span class="btn"> {{transaction.hash }}</span>
+                                </a>
+                            </td>
+                            <td class="text-center width-min">
+                                <a href="#/block/{{ transaction.block_number }}">{{transaction.block_number}}</a>
+                            </td>
+                            <td class="text-center width-medium">
+                                {{transaction.timestamp * 1000 | date:'medium'}}
+                            </td>
+                            <td class="text-left width-large">
+                                <span ng-if="addressId != (transaction.t_from | lowercase)"><a
+                                        href="#/address/{{ transaction.t_from }}"
+                                        class="text-omi">{{ transaction.t_from }}</a></span>
+                                <span ng-if="addressId == (transaction.t_from | lowercase)" class="text-omi">{{transaction.t_from
+                                    }}</span>
+                            </td>
+                            <td class="text-center width-min-m">
+                                <span class="type self" ng-if="transaction.type == 3"><span
+                                        class="translate-address-table2-self">SELF</span></span>
+                                <span class="type in" ng-if="transaction.type == 2"><span
+                                        class="translate-address-table2-in">IN</span></span>
+                                <span class="type out" ng-if="transaction.type == 1"><span
+                                        class="translate-address-table2-out">OUT</span></span>
+                            </td>
+                            <td class="text-left width-large">
+                                <span ng-if="addressId != (transaction.t_to | lowercase)"><a
+                                        href="#/address/{{ transaction.t_to }}">{{
+                                        transaction.t_to }}</a></span>
+                                <span ng-if="addressId == (transaction.t_to | lowercase)">{{ transaction.t_to }}</span>
+                            </td>
+                            <td class="text-right width-medium-l">
+                                {{transaction.value | balance }}
+                            </td>
+                            <td class="text-right width-min">
+                                {{transaction.gas | gasFormat }}
+                            </td>
+                            <td class="text-right width-medium-l">
+                                {{transaction.gas_price | gasPrice }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row pagination" ng-if="pages > 1">
+                <button class="button" ng-click="getTransactionsHistory(currentPage.val - 1)"
+                    ng-disabled="currentPage.val <= 1">
+                    Previous
+                </button>
+                <span ng-repeat="page in currentPageArr">
+                    <span ng-click="getTransactionsHistory(page)"
+                        ng-class="{'current': page == currentPage.val}">{{page}}</span>
+                </span>
+                <button class="button" ng-click="getTransactionsHistory(currentPage.val + 1)"
+                    ng-disabled="currentPage.val >= pages">
+                    Next
+                </button>
+                <select name="" id="" ng-change="getTransactionsHistory(currentPage.val)" ng-model="currentPage.val"
+                    ng-options="page for page in pageArr">
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

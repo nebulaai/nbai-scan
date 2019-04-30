@@ -1,0 +1,151 @@
+<div class="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <form class="navbar-form" ng-submit="processRequest()" name="search_form" role="search">
+                    <div class="input-group">
+                        <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required
+                            ng-model="ethRequest" class="form-control searchimain">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-bluem btu-r" type="submit">
+                                <i class="fa fa-search"></i> <span
+                                    class="translate-search-button">searchButton</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row four">
+            <div class="col-md-2 outer" align="center">
+                <div class="boxi"><span class="title translate-main-box-title1">mainBoxTitle1</span>
+                    <br />{{ blockNum }}</div>
+            </div>
+            <div class="col-md-2 outer" align="center">
+                <div class="boxi"><span class="title translate-main-box-title2">mainBoxTitle2</span>
+                    <br />{{ gasLimit }}</div>
+            </div>
+            <div class="col-md-2 outer" align="center">
+                <div class="boxi"><span class="title translate-main-box-title3">mainBoxTitle3</span>
+                    <br />{{ blocktime }} second(s)</div>
+            </div>
+            <div class="col-md-2 outer" align="center">
+                <div class="boxi"><span class="title translate-main-box-title4">mainBoxTitle4</span>
+                    <br />{{ difficulty | diffFormat }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container form">
+    <h1>
+        <img src="img/block.png" alt="blocks"> <span class="translate-main-table1-title">mainTable1Title</span>
+    </h1>
+    <br />
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered recentblockform">
+            <thead class="thead-inverse">
+                <td class="text-center no-left width-min">
+                    <strong class="translate-main-table1-column1"><i
+                            class="fa fa-cube"></i>&nbsp;mainTable1Column1</strong>
+                </td>
+                <td class="text-center translate-main-table1-column2 width-large">mainTable1Column2</td>
+                <td class="text-center translate-main-table1-column3 width-min">mainTable1Column3</td>
+                <td class="text-center translate-main-table1-column4  width-large">mainTable1Column4</td>
+                <td class="text-center translate-main-table1-column5 width-min">
+                    mainTable1Column5
+                </td>
+                <td class="text-center translate-main-table1-column6 width-medium">
+                    mainTable1Column6
+                </td>
+                <td class="text-center translate-main-table1-column7 width-min">
+                    mainTable1Column7
+                </td>
+                <td class="text-center no-right translate-main-table1-column8 width-min">
+                    mainTable1Column8
+                </td>
+            </thead>
+            <tbody>
+                <tr ng-repeat="block in blocks" class="animated fadeIn">
+                    <td style="vertical-align:middle;" class="text-center no-left width-min">
+                        <a href="#/blocks/{{ block.number }}">
+                            <span class="btn">
+                                {{ block.number }}</span>
+                        </a>
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center width-large">
+                        <a href="#/blocks/{{ block.hash }}">
+                            <span class="btn">{{ block.hash }}</span>
+                        </a>
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center width-min">{{ block.difficulty | diffFormat }}
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center miner-r width-large">
+                        <a href="#/address/{{ block.miner }}"><span class="btn miner-r">{{ block.miner }}</span></a>
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center width-min">
+                        {{ block.size | sizeFormat }}
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center width-medium">
+                        {{ block.timestamp * 1000 | date:'medium' }}
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center width-min">
+                        {{ block.Transactions.length }}
+                    </td>
+                    <td style="vertical-align:middle;" class="text-center no-right width-min">
+                        {{ block.gasUsed | gasFormat }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <h1>
+        <img src="img/transaction.png" alt="transaction"> <span
+            class="translate-main-table2-title">mainTable2Title</span>
+    </h1>
+    <br />
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered recenttransactionsform">
+            <thead class="thead-inverse">
+                <td class="no-left width-large-s text-left">
+                    <strong class="translate-main-table2-column1">mainTable2Column1</strong>
+                </td>
+                <td class="translate-main-table2-column2 width-min">mainTable2Column2</td>
+                <td class="translate-main-table2-column3 width-large text-left">mainTable2Column3</td>
+                <td class="translate-main-table2-column4 width-large text-left">mainTable2Column4
+                </td>
+                <td class="translate-main-table2-column5 width-min">
+                    mainTable2Column5
+                </td>
+                <td class="translate-main-table2-column6 width-medium text-right">
+                    mainTable2Column6
+                </td>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tx in recenttransactions track by $index-async" class="animated fadeIn">
+
+                    <td style="vertical-align:middle;" class="no-left width-large-s text-left">
+                        <a href="#/tx/{{ tx.hash }}"><span class="btn">{{ tx.hash }}</span></a>
+                    </td>
+                    <td style="vertical-align:middle;" class="width-min">
+                        <a href="#/block/{{ tx.block_number }}">
+                            {{ tx.block_number || "" }}
+                        </a>
+                    </td>
+                    <td style="vertical-align:middle;" class="width-large text-left">
+                        <a href="#/address/{{ tx.t_from }}"><span class="btn">{{ tx.t_from }}</span></a>
+                    </td>
+                    <td style="vertical-align:middle;" class="width-large text-left">
+                        <a href="#/address/{{ tx.t_to }}"><span class="btn">{{ tx.t_to }}</span></a>
+                    </td>
+                    <td style="vertical-align:middle;" class="width-min">
+                        {{ tx.gas | gasFormat }}
+                    </td>
+                    <td style="vertical-align:middle;" class="width-medium text-right">
+                        {{ tx.value | BigNum }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr class="separ-r">
+</div>
